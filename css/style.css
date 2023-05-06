@@ -43,11 +43,11 @@ body{
 .h1-sections{
     font-size: 20px;
 }
-.title-products{
+ul li h1{
     color: #1B1B1B;
     font-size: 20px;
 }
-.preco-products{
+ul li p{
     color:	
     #868383 ;
     font-size: 16px;
@@ -74,7 +74,7 @@ body{
     margin-left: 50px;
     margin-right: 50px;
 }
-.container-products{
+section ul li{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -83,7 +83,7 @@ body{
     height: 275px;
 
 }
-li img{
+ul li img{
     width: 207px;
     height: 150px;
 }
