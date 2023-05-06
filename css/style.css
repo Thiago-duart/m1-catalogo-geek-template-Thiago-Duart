@@ -87,3 +87,8 @@ ul li img{
     width: 207px;
     height: 150px;
 }
+@media (max-width: 1380px) {
+    .teste{
+        position: absolute;
+    }
+  }

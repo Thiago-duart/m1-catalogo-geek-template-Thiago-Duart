@@ -67,17 +67,45 @@ const productsArray = [
   }
 ];
 
-function addProduct (){
-  const createLi = document.createElement('li')
-  const createImg = document.createElement('img')
-  const createH1 = document.createElement('h1')
-  const createp = document.createElement('p')
-  const select = document.querySelector('ul')
-  createImg.setAttribute('src', './assets/img/actions/wolverine-action-figure.jpg')
-  createH1.innerText = "teste"
-  createp.innerText = 'R$ 123teste'
-  createLi.append(createImg,createH1,createp)
-  select.append(createLi)
+function addProduct (productsArray, type){
+  
+  for(let i = 0; i < productsArray.length; i++){
+    let select = {}
+    let createLi = document.createElement('li')
+    let createImg = document.createElement('img')
+    let createH1 =  document.createElement('h1')
+    let createp = document.createElement('p')
+    
+    if (productsArray[i].type === type){
+      select = document.querySelector('ul')
+      createImg.setAttribute('src', productsArray[i].image)
+      createH1.innerText = productsArray[i].name
+      createp.innerText = productsArray[i].price
+      
+    }else{
+      select = document.getElementById('ul-two')
+      createImg.setAttribute('src', productsArray[i].image)
+      createH1.innerText = productsArray[i].name
+      createp.innerText = productsArray[i].price 
+    }
+    createLi.append(createImg,createH1,createp) 
+    select.append(createLi)
+  }
 }
-addProduct()
-console.log(window.document.querySelector())
+addProduct(productsArray,'Paintings')
+console.log(window.document.querySelector('ul'))
+/*
+const select = document.querySelector('ul')
+const createLi = document.createElement('li')
+const createImg = document.createElement('img')
+const createH1 = document.createElement('h1')
+const createp = document.createElement('p')
+
+createImg.setAttribute('src', productsArray[0].image)
+createH1.innerText = productsArray[0].name
+createp.innerText = productsArray[0].price
+
+console.log(typeof createLi)
+createLi.append(createImg,createH1,createp)
+select.append(createLi)*/
+//console.log(window.document.querySelector(ul))
