@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+/*header*/
+.container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#config-icon{
+    margin-left: 50px;
+}
+#config-div{
+    margin-right: 50px;
+}
+
+.buttons-header{
+    margin-left: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: none; 
+    font-family: 'Roboto', sans-serif;
+    color: 	
+    #0A99FE;
+    font-size: 20px;
+}
+
+.buttons-header:hover{
+    color: white;
+    background-color: #0A99FE ;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+
+/*sections-products*/
+.h1-sections{
+    font-size: 20px;
+}
+.title-products{
+    color: #1B1B1B;
+    font-size: 20px;
+}
+.preco-products{
+    color:	
+    #868383 ;
+    font-size: 16px;
+}
+
+.container-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+.section-products ul {
+    overflow-x: auto;
+}
+.section-products{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-left: 50px;
+}
+.container-ul-sections{
+    display: flex;  
+    gap: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.container-products{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 207px;
+    height: 275px;
+
+}
+li img{
+    width: 207px;
+    height: 150px;
+}
