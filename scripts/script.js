@@ -30,7 +30,7 @@ const productsArray = [
     type: 'Paintings'
   },
   {
-    image:  "./assets/img/paintings/quadro-relogio.jpg",
+    image: "./assets/img/paintings/quadro-relogio.jpg",
     name: 'Smart Watch',
     price: 'R$120,00',
     type: 'Paintings'
@@ -67,33 +67,75 @@ const productsArray = [
   }
 ];
 
-function addProduct (productsArray, type){
+
+//Funcoes que separa os produtos por categoria e adiciona em um array de objetos
+function separatingPaintings(productsArray) {
+
+  let productsPaintings = []
+
+  for (let i = 0; i < productsArray.length; i++) {
+    if (productsArray[i].type === 'Paintings') {
+      productsPaintings.push(productsArray[i])
+    }
+  }
+  return productsPaintings
+}
+
+function separatingActionFigures(productsArray) {
+
+  let productsActionFigures = []
+
+  for (let i = 0; i < productsArray.length; i++) {
+    if (productsArray[i].type === 'Action Figures') {
+      productsActionFigures.push(productsArray[i])
+    }
+  }
+  return productsActionFigures
+}
+
+//funcoes que adiciona os produtos separadamente por categoria ao site 
+function addProductsPainting(productsPainting) {
+
+    for (let i = 0; i < productsPainting.length; i++) {
+      let select = {}
+      let createLi = document.createElement('li')
+      let createImg = document.createElement('img')
+      let createH1 = document.createElement('h1')
+      let createp = document.createElement('p')
+      
+      select = document.querySelector('ul')
+      createImg.setAttribute('src', productsPainting[i].image)
+      createH1.innerText = productsPainting[i].name
+      createp.innerText = productsPainting[i].price
+      
+      createLi.append(createImg, createH1, createp)
+      select.append(createLi)
+    }
+}
+
+function addProductsActionFigures(productsActionFigures) {
   
-  for(let i = 0; i < productsArray.length; i++){
+  for (let i = 0; i <productsActionFigures.length; i++) {
     let select = {}
     let createLi = document.createElement('li')
     let createImg = document.createElement('img')
-    let createH1 =  document.createElement('h1')
+    let createH1 = document.createElement('h1')
     let createp = document.createElement('p')
     
-    if (productsArray[i].type === type){
-      select = document.querySelector('ul')
-      createImg.setAttribute('src', productsArray[i].image)
-      createH1.innerText = productsArray[i].name
-      createp.innerText = productsArray[i].price
-      
-    }else{
-      select = document.getElementById('ul-two')
-      createImg.setAttribute('src', productsArray[i].image)
-      createH1.innerText = productsArray[i].name
-      createp.innerText = productsArray[i].price 
-    }
-    createLi.append(createImg,createH1,createp) 
+    select = document.getElementById('ul-two')
+    createImg.setAttribute('src', productsActionFigures[i].image)
+    createH1.innerText = productsActionFigures[i].name
+    createp.innerText =productsActionFigures[i].price
+
+    createLi.append(createImg, createH1, createp)
     select.append(createLi)
   }
 }
-addProduct(productsArray,'Paintings')
 
-
-
+//armazenando um array de objetos que foi seperado por funcoes
+const productsPainting = separatingPaintings(productsArray)
+const productsActionFigures = separatingActionFigures(productsArray)
+//funcoes que cria e adicionam os elementos na tela
+addProductsActionFigures(productsActionFigures)
+addProductsPainting(productsPainting)
 
