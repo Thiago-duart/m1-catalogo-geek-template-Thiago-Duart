@@ -98,18 +98,18 @@ function addProductsPainting(productsPainting) {
 
     for (let i = 0; i < productsPainting.length; i++) {
       let select = {}
-      let createLi = document.createElement('li')
-      let createImg = document.createElement('img')
-      let createH1 = document.createElement('h1')
-      let createp = document.createElement('p')
+      let product = document.createElement('li')
+      let productImg = document.createElement('img')
+      let productName = document.createElement('h6')
+      let productPreco = document.createElement('p')
       
       select = document.querySelector('ul')
-      createImg.setAttribute('src', productsPainting[i].image)
-      createH1.innerText = productsPainting[i].name
-      createp.innerText = productsPainting[i].price
+      productImg.setAttribute('src', productsPainting[i].image)
+      productName.innerText = productsPainting[i].name
+      productPreco.innerText = productsPainting[i].price
       
-      createLi.append(createImg, createH1, createp)
-      select.append(createLi)
+      product.append(productImg, productName, productPreco)
+      select.append(product)
     }
 }
 
@@ -117,18 +117,18 @@ function addProductsActionFigures(productsActionFigures) {
   
   for (let i = 0; i <productsActionFigures.length; i++) {
     let select = {}
-    let createLi = document.createElement('li')
-    let createImg = document.createElement('img')
-    let createH1 = document.createElement('h1')
-    let createp = document.createElement('p')
+    let product = document.createElement('li')
+    let productImg = document.createElement('img')
+    let productName = document.createElement('h6')
+    let productPreco = document.createElement('p')
     
     select = document.getElementById('ul-two')
-    createImg.setAttribute('src', productsActionFigures[i].image)
-    createH1.innerText = productsActionFigures[i].name
-    createp.innerText =productsActionFigures[i].price
+    productImg.setAttribute('src', productsActionFigures[i].image)
+    productName.innerText = productsActionFigures[i].name
+    productPreco.innerText =productsActionFigures[i].price
 
-    createLi.append(createImg, createH1, createp)
-    select.append(createLi)
+    product.append(productImg, productName, productPreco)
+    select.append(product)
   }
 }
 
